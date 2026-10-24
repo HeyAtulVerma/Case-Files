@@ -95,7 +95,8 @@ function renderOverview() {
 }
 
 function renderCaseCards() {
-  const searchTerm = searchInput.value.trim().toLowerCase();
+  const searchTerm = searchInput.value.trim();
+  console.log(searchTerm.includes("the laptop"));
   const selectedStatus = statusFilter.value;
 
   const filtered = cases.filter((caseItem) => {
