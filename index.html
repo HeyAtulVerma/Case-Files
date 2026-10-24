@@ -1,66 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case Files</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="brand">CASE FILES</div>
-      <nav class="nav" aria-label="Main navigation">
-        <button class="nav-link active" data-section="overview" type="button">Overview</button>
-        <button class="nav-link" data-section="cases" type="button">Cases</button>
-        <button class="nav-link" data-section="suspects" type="button">Suspects</button>
-      </nav>
-    </header>
 
-    <main class="container">
-      <section id="overview" class="page active">
-        <h1>Welcome, Detective</h1>
-        <p class="subtitle">Investigate cases and uncover the truth.</p>
-        <div class="stats">
-          <div class="stat-box">
-            <span class="label">Total Cases</span>
-            <strong id="total-cases">0</strong>
-          </div>
-          <div class="stat-box">
-            <span class="label">Open Cases</span>
-            <strong id="open-cases">0</strong>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Files</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">CASE FILES</div>
+    <nav class="nav" aria-label="Main navigation">
+      <button class="nav-link active" data-section="overview" type="button">Overview</button>
+      <button class="nav-link" data-section="cases" type="button">Cases</button>
+      <button class="nav-link" data-section="suspects" type="button">Suspects</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="overview" class="page active">
+      <h1>Welcome, Detective</h1>
+      <p class="subtitle">Investigate cases and uncover the truth.</p>
+      <div class="stats">
+        <div class="stat-box">
+          <span class="label">Total Cases</span>
+          <strong id="total-cases">0</strong>
         </div>
-        <div class="list-section">
-          <h2>All Cases</h2>
-          <div id="overview-cases" class="case-list"></div>
+        <div class="stat-box">
+          <span class="label">Open Cases</span>
+          <strong id="open-cases">0</strong>
         </div>
-      </section>
+      </div>
+      <div class="list-section">
+        <h2>All Cases</h2>
+        <div id="overview-cases" class="case-list"></div>
+      </div>
+    </section>
 
-      <section id="cases" class="page">
-        <div class="controls">
-          <input type="text" id="search-input" placeholder="Search cases by title..." aria-label="Search cases" />
-          <select id="status-filter" aria-label="Filter cases by status">
-            <option value="all">All Cases</option>
-            <option value="Open">Open</option>
-            <option value="Investigating">Investigating</option>
-            <option value="Solved">Solved</option>
-          </select>
-        </div>
+    <section id="cases" class="page">
+      <div class="controls">
+        <input type="text" id="search-input" placeholder="Search cases by title..." aria-label="Search cases" />
+        <select id="status-filter" aria-label="Filter cases by status">
+          <option value="all">All Cases</option>
+          <option value="Open">Open</option>
+          <option value="Investigating">Investigating</option>
+          <option value="Solved">Solved</option>
+        </select>
+      </div>
 
-        <div id="cases-list" class="case-grid"></div>
-      </section>
+      <div id="cases-list" class="case-grid"></div>
+    </section>
 
-      <section id="suspects" class="page">
-        <h2>Suspects</h2>
-        <div id="suspects-list" class="suspect-list"></div>
-      </section>
+    <section id="suspects" class="page">
+      <h2>Suspects</h2>
+      <div id="suspects-list" class="suspect-list"></div>
+    </section>
 
-      <section id="case-detail" class="page detail-page">
-        <button id="back-to-cases" class="back-button" type="button">← Back to Cases</button>
-        <div id="case-detail-content"></div>
-      </section>
-    </main>
+    <section id="case-detail" class="page detail-page">
+      <button id="back-to-cases" class="back-button" type="button">← Back to Cases</button>
+      <div id="case-detail-content"></div>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
