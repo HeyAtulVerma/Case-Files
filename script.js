@@ -79,7 +79,7 @@ function renderOverview() {
 
   overviewCases.innerHTML = cases
     .map(
-      (caseItem) => `
+      (caseItem, index) => `
         <div class="case-card">
           <div class="case-meta">
             <span class="case-id">CASE #${caseItem.id}</span>
@@ -87,7 +87,7 @@ function renderOverview() {
           </div>
           <h3>${caseItem.title}</h3>
           <div class="case-description">${caseItem.description}</div>
-          <button type="button" data-case-id="${caseItem.id}">View Details</button>
+          <button type="button" data-case-id="${index}">View Details</button>
         </div>
       `,
     )
@@ -115,7 +115,7 @@ function renderCaseCards() {
 
   casesList.innerHTML = filtered
     .map(
-      (caseItem) => `
+      (caseItem, index) => `
         <article class="case-card">
           <div class="case-meta">
             <span class="case-id">CASE #${caseItem.id}</span>
@@ -123,7 +123,7 @@ function renderCaseCards() {
           </div>
           <h3>${caseItem.title}</h3>
           <div class="case-description">${caseItem.description}</div>
-          <button type="button" data-case-id="${caseItem.id}">View Details</button>
+          <button type="button" data-case-id="${index}">View Details</button>
         </article>
       `,
     )
@@ -145,7 +145,7 @@ function renderSuspects() {
 }
 
 function showCaseDetail(caseId) {
-  const selectedCase = cases[parseInt(caseId)];
+  const selectedCase = cases[caseId];
   console.log(selectedCase);
 
   if (!selectedCase) {
@@ -201,7 +201,7 @@ document.addEventListener("click", (event) => {
 
   if (target) {
     const selectedCaseId = target.dataset.caseId;
-    showCaseDetail(selectedCaseId - 101);
+    showCaseDetail(selectedCaseId);
   }
 });
 
