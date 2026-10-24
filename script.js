@@ -95,16 +95,19 @@ function renderOverview() {
 }
 
 function renderCaseCards() {
-  const searchTerm = searchInput.value.trim().toLowerCase();
+  const searchTerm = searchInput.value.trim();
+  console.log(searchTerm.includes("the laptop"));
   const selectedStatus = statusFilter.value;
 
   const filtered = cases.filter((caseItem) => {
     const matchesSearch = caseItem.title.includes(searchTerm);
+    console.log("Matcehd case: " + matchesSearch);
     const matchesStatus =
       selectedStatus === "all" ||
       (selectedStatus === "Investigating"
         ? caseItem.status === "Open"
         : caseItem.status === selectedStatus);
+    console.log("Matcehd status: " + matchesStatus);
     return matchesSearch && matchesStatus;
   });
 
